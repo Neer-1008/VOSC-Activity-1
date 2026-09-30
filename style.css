@@ -1,0 +1,100 @@
+{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+body {
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+font-family: Arial, sans-serif;
+background: linear-gradient(135deg, #667eea, #764ba2);
+color: #222;
+}
+
+.game-container {
+width: min(90vw, 420px);
+padding: 30px;
+text-align: center;
+background: #ffffff;
+border-radius: 20px;
+box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+margin-bottom: 10px;
+color: #333;
+}
+
+#status {
+min-height: 24px;
+margin-bottom: 20px;
+font-size: 18px;
+font-weight: bold;
+color: #555;
+}
+
+.board {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 8px;
+margin-bottom: 20px;
+}
+
+.cell {
+aspect-ratio: 1;
+border: none;
+border-radius: 10px;
+background: #f0f0f0;
+font-size: clamp(2rem, 12vw, 4rem);
+font-weight: bold;
+color: #667eea;
+cursor: pointer;
+transition: background 0.2s, transform 0.1s;
+}
+
+.cell:hover:not(:disabled) {
+background: #e3e3ff;
+transform: scale(1.03);
+}
+
+.cell:disabled {
+cursor: default;
+}
+
+.cell.o {
+color: #764ba2;
+}
+
+.cell.winner {
+background: #b7f7c1;
+color: #16852c;
+}
+
+.restart-button {
+padding: 12px 24px;
+border: none;
+border-radius: 8px;
+background: #667eea;
+color: white;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+transition: background 0.2s, transform 0.1s;
+}
+
+.restart-button:hover {
+background: #5568d9;
+}
+
+.restart-button:active {
+transform: scale(0.97);
+}
+
+@media (max-width: 400px) {
+.game-container {
+padding: 20px;
+}
+}
